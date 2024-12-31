@@ -196,9 +196,9 @@
     }
     .container {
         display:grid;
-        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-columns: 1fr .1fr 3fr .1fr 1fr;
         grid-template-rows:.25fr 1fr 1fr;
-        background-color:var(--bodyColor)
+        background-color:var(--bodyColor);
         
     }
 
@@ -217,46 +217,48 @@
         list-style: none;
     }
     .projectBody {
-        grid-column: 2/3;
+        grid-column: 3/4;
         grid-row: 2/5;
         display:grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows:repeat(auto-fit, minmax(.5fr, 1fr));
-        border-top:var(--borderColor) 2px solid;
+        grid-template-rows:repeat(auto-fill, minmax(.5fr, 1fr));
+        gap:30px;
+        margin-top:15px;
         
     }
     .announcementContainer {
-        grid-column: 3/4;
+        grid-column: 5/6;
         grid-row:2/3;
         background-color: var(--bodyColor);
         display:flex;
         flex-direction:column;
-        border-top:var(--borderColor) 2px solid;
+        margin-top:15px;
     }
     .announcementContainer > h2 {
         margin-top:4px;
         
     }
     .trendingContainer {
-        grid-column: 3/4;
+        grid-column: 5/6;
         grid-row:3/4;
         background-color: var(--bodyColor);
         border-top:black 2px solid;
     }
     .projectBodyCard {
+        box-sizing:border-box;
         background-color: var(--annColor);
         border-radius:10px;
-        width:clamp(100px, 300px, 400px);
-        margin:10px 10px 0 55px;
+        width:minmax(10vw, 20vw);
+        
         border-left:#000000 5px solid;
         color:black;
-        height:minmax(300px 400px);
-        line-height: minmax(.8em 1.2em);
+        height:minmax(5vh 20vh);
         padding:15px;
     }
     .projectBody > div > p {
         margin-left:5px;
         margin-top:5px;
+        font-size:3vh;
         line-height:clamp(2vh, 3vh, 4vh);
     }
     .projectBody > div > h3 {
@@ -316,7 +318,7 @@
         transition:all .5s ease-in;
     }
     .header {
-        grid-column:2/4;
+        grid-column:2/6;
         grid-row:1/2;
         display:grid;
         grid-template-columns:2fr 1fr;
